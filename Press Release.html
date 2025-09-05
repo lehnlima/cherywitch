@@ -1,0 +1,145 @@
+<index class="html">
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto — Press Release, Vídeo e Contato</title>
+  <meta name="description" content="Site simples com press release, vídeo e formulário de contato." />
+  <meta property="og:title" content="Jornezy Footprint
+" />
+  <meta property="og:description" content="Site simples com press release, vídeo e formulário de contato." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#dab0f7" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fcfaf6; /* fundo escuro elegante */
+      --card:#efd7c7; /* cartões */
+      --muted:#09111f; /* texto secundário */
+      --fg:#181b29; /* texto */
+      --acc:#90a2ee; /* roxo */
+      --acc-2:#dab0f7; /* ciano */
+      --ring: 0 0 0 3px rgba(207, 187, 243, 0.658);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(200, 175, 243, 0.15), transparent 60%),
+                  radial-gradient(900px 500px at 110% 10%, rgba(142, 216, 228, 0.12), transparent 60%),
+                  var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+    }
+    a{color:var(--acc); text-decoration:none}
+    a:hover{opacity:.9; text-decoration:underline}
+    .container{max-width:1000px; margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:20; backdrop-filter:saturate(180%) blur(8px);
+      background:linear-gradient(to bottom, rgba(144, 144, 230, 0.85), rgba(243, 243, 243, 0.55));
+      border-bottom:1px solid rgba(212, 151, 185, 0.06);
+    }
+    .nav{display:flex; gap:16px; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg, var(--acc), var(--acc-2)); box-shadow:0 4px 20px rgba(124,58,237,.35)}
+    .menu{display:flex; gap:14px}
+    .menu a{padding:10px 12px; border-radius:12px}
+    .menu a:hover{background:rgba(189, 178, 178, 0.06); text-decoration:none}
+
+    .hero{padding:48px 0 12px}
+    .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.15; margin:0 0 8px}
+    .hero p{margin:0; color:var(--muted)}
+
+    .grid{display:grid; gap:24px; grid-template-columns: 1.5fr 1fr; margin-top:28px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:0 10px 40px rgba(0,0,0,.35)}
+
+    h2{font-size:clamp(20px, 2.6vw, 28px); margin:0 0 14px}
+    h3{font-size:19px; margin:24px 0 10px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08)}
+
+    .press-meta{display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 16px; color:var(--muted); font-size:14px}
+    .press-body p{margin:0 0 12px}
+    .press-body ul{padding-left:18px; margin:12px 0}
+
+    .buttons{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    .button-container {display: flex; align-items: center;
+    gap: 20px; /* Adiciona um espaço de 20px entre o botão e a imagem */
+}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); font-weight:600; cursor:pointer; background:rgba(255,255,255,.06)}
+    .btn.primary{background:linear-gradient(135deg, var(--acc), var(--acc-2)); border:none; color:#0c1020}
+    .btn:hover{opacity:.95}
+    .centralizar-imagem{display: flex; align-items: center;}
+
+    .video-wrap{position:relative; width:100%; padding-top:56.25%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#000}
+    .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+    form{display:grid; gap:12px}
+    label{font-weight:600}
+    input, textarea{width:100%; padding:12px 14px; background:#c2c2df; color:var(--fg); border:1px solid rgba(255,255,255,.12); border-radius:12px}
+    input:focus, textarea:focus{outline:none; box-shadow:var(--ring); border-color:transparent}
+    textarea{min-height:140px; resize:vertical}
+    .hint{font-size:12px; color:var(--muted)}
+    .status{margin-top:10px; font-size:14px}
+
+    footer{margin:40px 0 30px; color:var(--muted); text-align:center}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+      <img src="img/Icon.png" class="logo"/><span>Cher'y Witch</span></div>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Home</a>
+        <a href="Press Release.html">Press Release</a>
+        <a href="Contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="press-meta"></div>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="
+    display: flex;
+    align-content: center;
+    justify-content: center;
+">Press Release</h1>
+       <p>O estúdio de desenvolvimento independente <b>Cher'y Witch</b>, tem o prazer de anunciar seu mais novo jogo, <b>Joornezy Footprint</b>. Mergulhe em uma jornada de autodescoberta e superação em um mundo mágico e misterioso, inspirado na icônica <b>Jornada do Louco do Tarot de Waite.</b></p>
+       <div class="press-meta"></div>
+      <p>Em Joornezy, os jogadores acompanham <b>Evie</b>, uma menina que, após a perda de sua amada tia Melissa, herda um antigo e precioso baralho de tarot. Com ele, Evie descobre sua missão: recuperar cartas perdidas em um jardim proibido, um lugar que sempre foi considerado perigoso e misterioso por sua tia.</p>
+       <div class="press-meta"></div>
+      <p>Ao lado de seu fiel e adorável companheiro, <b>Lippy</b>, um maltês branco como a neve, <b>Evie</b> deve enfrentar os desafios desse jardim mágico, habitado por seres de intenções complexas e desconhecidas. Aventure-se por paisagens oníricas, resolva enigmas e interaja com criaturas estranhas enquanto <b>Evie e Lippy</b> lidam com seus medos e inseguranças mais profundos.</p>
+       <div class="press-meta"></div>
+      <p><b>Joornezy Footprint</b> estará disponível para as principais plataforma da <b>Steam em fevereiro de 2026.</b> </p>
+       <div class="press-meta"></div>
+      <p><b>Esperamos vocês nessa aventura! </b></p>
+       <div class="press-meta"></div>
+      <div class="buttons" style="
+    display: flex;
+    align-content: center;
+    justify-content: center;
+">
+        <a class="btn primary" href="press kit.zip/Jornezy Footprint - PressKit.pdf" download>Baixar Press Kit</a>
+      </div>
+      
+  </main>
+
+  <footer class="container">
+    <img src="img/fc.png" alt="LOGO" width="200" height="201"></div>
+    <p>© <span id="year"></span> Cher'y Witch. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
+
+</index>
