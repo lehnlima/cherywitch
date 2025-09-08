@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jornezy Footprint: A jornada mágica de Evie e Lippy. Conheça a desenvolvedora Cher'y Witch e veja imagens do projeto.">
+  <title>Cher'y Witch</title>
+  <link rel="icon" href="img/Icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="img/Icon.png" class="logo"/><span>Cher'y Witch</span>
+      </div>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Home</a>
+        <a href="press-release.html">Press Release</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Jornezy Footprint</h1>
+      <p>Descubra a jornada mágica de Evie e seu fiel companheiro Lippy.</p>
+      <div class="video-hero">
+        <iframe src="https://www.youtube.com/embed/NYbKR0biM_E" allowfullscreen title="Trailer Jornezy Footprint"></iframe>
+      </div>
+    </section>
+
+    <div class="press-meta"></div>
+
+    <section id="portfolio" class="card" aria-labelledby="portfolio-title">
+      <h2 id="portfolio-title">Galeria de Imagens</h2>
+      <div class="gallery">
+        <img src="img2/1.png" alt="Cena 1" loading="lazy">
+        <img src="img2/2.png" alt="Cena 2" loading="lazy">
+        <img src="img2/3.png" alt="Logo" loading="lazy">
+        <img src="img2/3.png" alt="Evie" loading="lazy">
+        <img src="img2/4.png" alt="Lippy" loading="lazy">
+        <img src="img2/5.png" alt="Assets" loading="lazy">
+        <img src="img2/6.png" alt="Assets" loading="lazy">
+      </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+      <span class="close" aria-label="Fechar" tabindex="0">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Imagem Ampliada" style="height: 50%;">
+    </div>
+
+    <div class="press-meta"></div>
+    <div class="press-meta"></div>
+
+    <section id="sobre" class="card" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre a Desenvolvedora</h2>
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <img src="img/leticia.png" alt="Foto da desenvolvedora" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+        <div>
+          <h3>Cher’y Witch (Letícia Lima)</h3>
+          <p>Sou desenvolvedora independente apaixonada por criar mundos mágicos e narrativas que misturam fantasia, tarot e mistério. Meu objetivo é transportar jogadores para experiências únicas, onde emoção e imaginação se encontram.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="img/fc.png" alt="Logo Cher'y Witch" width="200" height="201" loading="lazy">
+    <p>© <span id="year"></span> Cher'y Witch. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox Script
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const close = document.querySelector(".lightbox .close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    close.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+  
+</body>
+</html>
